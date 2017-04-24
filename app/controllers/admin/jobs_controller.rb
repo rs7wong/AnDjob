@@ -12,7 +12,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def new
-    @job = Job.new(job_params)
+    @job = Job.new
   end
 
   def create
