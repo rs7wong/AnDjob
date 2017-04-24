@@ -19,3 +19,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+//<!--=搜索框=-->
+.form-group {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 225px; //加上width
+}
+//<!--=搜索框=-->
