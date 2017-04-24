@@ -13,13 +13,14 @@ class JobsController < ApplicationController
   end
 
   def index
+
     @jobs = case params[:order]
     when 'by_lower_bound'
-      Job.published.order('wage_lower_bound DESC')
+      Job.published.order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 10)
     when 'by_upper_bound'
-      Job.published.order('wage_upper_bound DESC')
+      Job.published.order('wage_upper_bound DESC').paginate(:page => params[:page], :per_page => 10)
     else
-      Job.published.recent
+      Job.published.recent.paginate(:page => params[:page], :per_page => 10)
     end
   end
 
@@ -61,7 +62,7 @@ class JobsController < ApplicationController
   def search
     if @query_string.present?
       search_result = Job.published.ransack(@search_criteria).result(:distinct => true)
-      @jobs = search_result.recent.paginate(:page => params[:page], :per_page => 5 )
+      @jobs = search_result.recent.paginate(:page => params[:page], :per_page => 10)
     end
   end
   # <!--=搜索功能=-->
