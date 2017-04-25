@@ -1,53 +1,58 @@
-
-
 <br><br>
+<div class="col-md-9 col-centered">
+<div class="panel">
+  <div class="panel-heading">
+    <h1 class="panel-title">所有工作列表
+      <div class="dropdown clearfix pull-right">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          排序
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li>
+            <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %>
+          </li>
+          <li>
+            <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %>
+          </li>
+          <li>
+            <%= link_to("按照發表時間排序", jobs_path ) %>
+          </li>
+        </ul>
+      </div>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-boldered table-hover">
+      <thead>
+        <tr>
+          <td>公司名稱</td>
+          <td>工作類別</td>
+          <td>工作名稱</td>
 
-<div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    排序
-      <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-    <li>
-      <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %>
-    </li>
-    <li>
-      <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %>
-    </li>
-    <li>
-      <%= link_to("按照發表時間排序", jobs_path ) %>
-    </li>
-  </ul>
+          <td>薪資下限</td>
+          <td>薪資上限</td>
+          <td>刊登時間</td>
+        </tr>
+      </thead>
+
+      <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to(job.company, job_path(job)) %></td>
+        <td><%= link_to(job.category, job_path(job)) %></td>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.created_at %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
-
-<table class="table table-boldered">
-  <thead>
-    <tr>
-      <td>公司名稱</td>
-      <td>工作類別</td>
-      <td>職缺</td>
-      <td>收到履歷數量</td>
-      <td>薪資下限</td>
-      <td>薪資上限</td>
-      <td>刊登時間</td>
-    </tr>
-  </thead>
-
-  <% @jobs.each do |job| %>
-  <tr>
-    <td><%= link_to(job.company, job_path(job)) %></td>
-    <td><%= link_to(job.category, job_path(job)) %></td>
-    <td><%= link_to(job.title, job_path(job)) %></td>
-    <td><%= link_to(job.resumes.count, job_resumes_path(job)) %> </td>
-    <td><%= job.wage_lower_bound %></td>
-    <td><%= job.wage_upper_bound %></td>
-    <td><%= job.created_at %>
-    </td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<div class="text-center">
-  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>

@@ -4294,8 +4294,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
 }
 .navbar-brand > img {
-  display: block;
+  display: inline-block; //图片和链接文字显示在同一行
+  margin-right: 10px; //图片和链接文字拉开一点距离
+  width: 32px; //定制图片宽度
+  height: 32px; //定制图片高度
 }
+
+
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
@@ -4981,7 +4986,7 @@ a.badge:focus {
   margin-bottom: 15px;
   font-size: 23px;
   font-weight: 200;
-  color: #2b3e50 
+  color: #2b3e50
 }
 .jumbotron > hr {
   border-top-color: #39444e;

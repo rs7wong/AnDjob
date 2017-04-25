@@ -1,4 +1,80 @@
-<div id="search-page" class="container-fluid jobs-show-page">
+<br><br>
+<div class="col-md-9 col-centered">
+
+
+<% if @jobs.blank?%>
+  <br>
+  <div>
+    抱歉，未找到符合工作。
+  </div>
+<% else %>
+
+<div class="panel">
+  <div class="panel-heading">
+    <h1 class="panel-title">搜尋結果
+      <div class="dropdown clearfix pull-right">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          排序
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li>
+            <%= link_to("按照薪資下限排序", jobs_path(:order => "by_lower_bound")) %>
+          </li>
+          <li>
+            <%= link_to("按照薪資上限排序", jobs_path(:order => "by_upper_bound")) %>
+          </li>
+          <li>
+            <%= link_to("按照發表時間排序", jobs_path ) %>
+          </li>
+        </ul>
+      </div>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-boldered table-hover">
+      <thead>
+        <tr>
+          <td>公司名稱</td>
+          <td>工作類別</td>
+          <td>工作名稱</td>
+
+          <td>薪資下限</td>
+          <td>薪資上限</td>
+          <td>刊登時間</td>
+        </tr>
+      </thead>
+
+      <% @jobs.each do |job| %>
+      <tr>
+        <td><%= link_to(job.company, job_path(job)) %></td>
+        <td><%= link_to(job.category, job_path(job)) %></td>
+        <td><%= link_to(job.title, job_path(job)) %></td>
+
+        <td><%= job.wage_lower_bound %></td>
+        <td><%= job.wage_upper_bound %></td>
+        <td><%= job.created_at %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>
+<% end %>
+<div class="pull-right">
+  <%= link_to(content_tag(:i, "瀏覽所有工作"), jobs_path) %> |
+  <%= link_to(content_tag(:i, "返回上頁"), url_for(:back)) %>
+</div>
+</div>
+
+
+
+
+<!-- <div id="search-page" class="container-fluid jobs-show-page">
   <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
     <br>
     <div class="pull-right">
@@ -6,18 +82,13 @@
       <%= link_to(content_tag(:i, " Back", class: "fa fa-arrow-left"), url_for(:back)) %>
     </div>
 
-    <% if @jobs.blank?%>
-      <br>
-      <div>
-        Opps! No any results matched, please try again.
-      </div>
-    <% else %>
+
       <h3>Total find <%= @jobs.count %> jobs</h3>
       <div class="divider"></div>
       <%= render :partial => "jobs_item", :collection => @jobs, :as => :job %>
       <div class="text-center">
         <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
       </div>
-    <% end %>
+
   </div>
-</div>
+</div> -->
