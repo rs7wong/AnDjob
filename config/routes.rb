@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   devise_for :user, :controllers => { :registrations => "users/registrations" }
-  root 'jobs#index'
+
+
+  resources :jobs do
+    collection do
+      get :search
+    end
+    resources :resumes
+  end
+
 
   namespace :admin do
     resources :jobs do
@@ -12,16 +20,15 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :jobs
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :jobs do
-    resources :resumes
 
-    collection do
-      get :search
-    end
-    
-  end
+  root 'jobs#index'
+
 
 end
