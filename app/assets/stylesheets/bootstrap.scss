@@ -24,8 +24,8 @@
  */
 
 html {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -77,8 +77,8 @@ strong {
   font-weight: bold;
 }
 dfn {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
 }
 h1 {
   font-size: 2em;
@@ -126,8 +126,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-size: 1em;
 }
 button,
@@ -282,15 +282,15 @@ th {
   }
 }
 @font-face {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
 }
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1100,8 +1100,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-size: 15px;
   line-height: 1.42857143;
   color: #000000;
@@ -1111,8 +1111,8 @@ input,
 button,
 select,
 textarea {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-size: inherit;
   line-height: inherit;
 }
@@ -1203,8 +1203,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-weight: 400;
   line-height: 1.1;
   color: inherit;
@@ -1552,8 +1552,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
 }
 code {
   padding: 2px 4px;
@@ -6055,8 +6055,8 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6174,8 +6174,8 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6438,8 +6438,8 @@ button.close {
   width: 20px;
   height: 20px;
   line-height: 1;
-  font-family: 'Tenor Sans', sans-serif;
-  font-family: 'cwTeXYen', sans-serif;
+  font-family: 'Tenor Sans', 'cwTeXYen', sans-serif;
+
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
