@@ -15,6 +15,14 @@ class JobsController < ApplicationController
   def index
 
     @jobs = case params[:order]
+
+# 公司＋分類
+    when 'by_company'
+      Job.published.company.paginate(:page => params[:page], :per_page => 10)
+    when 'by_category'
+      Job.published.category.paginate(:page => params[:page], :per_page => 10)
+# 公司＋分類
+
     when 'by_lower_bound'
       Job.published.order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 10)
     when 'by_upper_bound'
@@ -22,6 +30,18 @@ class JobsController < ApplicationController
     else
       Job.published.recent.paginate(:page => params[:page], :per_page => 10)
     end
+
+ # 判断是否筛选职位类型 #
+    if params[:category].present?
+      @category = params[:category]
+      if @category == '所有類型'
+        @jobs = Job.published.recent.paginate(:page => params[:page], :per_page => 10)
+      else
+        @jobs = Job.where(:is_hidden => false, :category => @category).recent.paginate(:page => params[:page], :per_page => 10)
+      end
+    end
+# 判断是否筛选职位类型 #
+
   end
 
   def new
