@@ -4984,34 +4984,53 @@ a.badge:focus {
 
 // --背景--
 .jumbotron-h {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-top: 10em;
+  padding-bottom: 5em;
+  margin-bottom: 0em;
+  height: 30em;
   color: inherit;
-  background-color: rgba(240, 173, 78, 0.75);
 }
+.bg {
+  background-image: linear-gradient(to top, #007adf 0%, #00ecbc 100%); -webkit-filter:opacity(.5);
+}
+
+
+
+// background-color: rgba(240, 173, 78, 0.75);
 
 .jumbotron-a {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-top: 10em;
+  padding-bottom: 5em;
+  margin-bottom: 5em;
+  margin-top: 0em;
+  height: 20em;
   color: inherit;
-  background-color: rgba(92, 184, 92, 0.75);
+  background-image: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%); -webkit-filter:opacity(.6);
 }
 
+// background-color: rgba(92, 184, 92, 0.75);
+
 .jumbotron-d {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: rgba(91, 192, 222, 0.75);
+  padding-top: 10em;
+  padding-bottom: 5em;
+  margin-bottom: 5em;
+  margin-top: 0em;
+  height: 20em;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); -webkit-filter:opacity(.6);
+
 }
+
+// background-color: rgba(91, 192, 222, 0.75);
+
 // --背景--
 
 .jumbotron h1,
 .jumbotron .h1 {
   color: #d9534f
 }
+
+
+
 .jumbotron p {
   margin-bottom: 15px;
   font-size: 23px;
