@@ -15,7 +15,7 @@ header, footer
     margin: 0 auto;
 	padding: 5em 3em;
 	text-align: center;
-    background: #504249;
+    background: #ffffff;
 }
 //
 // header h1
@@ -42,7 +42,7 @@ div.container
 {
     font-family: 'Tenor Sans', sans-serif;
     font-family: 'cwTeXYen', sans-serif;
-    color: #3B3135;
+    color: #000000;
     margin: 0 auto;
 	padding: 10em 3em;
 	text-align: center;
@@ -50,7 +50,7 @@ div.container
 
 div.container a
 {
-    color: #3B3135;
+    color: #000000;
     text-decoration: none;
     font-family: 'Tenor Sans', sans-serif;
     font-family: 'cwTeXYen', sans-serif;
@@ -262,7 +262,7 @@ div.circleBehind a:before, div.circleBehind a:after
     left: 50%;
     width: 50px;
     height: 50px;
-    border: 4px solid rgba(59, 49, 53, 0.8);
+    border: 4px solid rgba(177, 187, 154, 0.8);
     transform: translateX(-50%) translateY(-50%) scale(0.8);
     border-radius: 50%;
     background: transparent;
@@ -394,7 +394,7 @@ div.pullDown a:before
     left: 0px;
     top: 0px;
     content: '';
-    background: #3B3135;
+    background: #000000;
     opacity: 0.3;
     transition: all 0.3s;
 }
