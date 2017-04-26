@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url('https://fonts.googleapis.com/css?family=Niconne|Tenor+Sans');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexyen.css');
+
+
 /*!
  * bootswatch v3.3.7
  * Homepage: http://bootswatch.com
@@ -21,7 +24,8 @@
  */
 
 html {
-  font-family: sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -73,7 +77,8 @@ strong {
   font-weight: bold;
 }
 dfn {
-  font-style: italic;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
 }
 h1 {
   font-size: 2em;
@@ -121,7 +126,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-size: 1em;
 }
 button,
@@ -276,15 +282,15 @@ th {
   }
 }
 @font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
 }
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1094,7 +1100,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #ebebeb;
@@ -1104,7 +1111,8 @@ input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-size: inherit;
   line-height: inherit;
 }
@@ -1195,7 +1203,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: inherit;
@@ -1543,7 +1552,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
 }
 code {
   padding: 2px 4px;
@@ -4971,13 +4981,33 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
-.jumbotron {
+
+// --背景--
+.jumbotron-h {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: rgba(59, 49, 53, 0.1);
+  background-color: rgba(240, 173, 78, 0.75);
 }
+
+.jumbotron-a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: rgba(92, 184, 92, 0.75);
+}
+
+.jumbotron-d {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: rgba(91, 192, 222, 0.75);
+}
+// --背景--
+
 .jumbotron h1,
 .jumbotron .h1 {
   color: #d9534f
@@ -4986,7 +5016,7 @@ a.badge:focus {
   margin-bottom: 15px;
   font-size: 23px;
   font-weight: 200;
-  color: #2b3e50
+  color: #3B3135
 }
 .jumbotron > hr {
   border-top-color: #39444e;
@@ -4994,21 +5024,21 @@ a.badge:focus {
 .container .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .jumbotron .container {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .jumbotron h1,
   .jumbotron .h1 {
@@ -6006,7 +6036,8 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6124,7 +6155,8 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6387,7 +6419,8 @@ button.close {
   width: 20px;
   height: 20px;
   line-height: 1;
-  font-family: serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'cwTeXYen', sans-serif;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';

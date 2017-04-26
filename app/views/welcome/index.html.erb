@@ -1,25 +1,35 @@
-<section class="intro">
-  <div class="row">
-    <div class="col-md-12 text-center">
+<div class="container home-img">
       <!-- <div class="intro-content"> -->
-      <div class="jumbotron">
-        <h1 class="text-danger">AnDjob</h1>
+      <div class="jumbotron-h">
+        <h1 class="jumbotron .h1 logo">AnDjob</h1>
         <p>一份好工作，給 藝術 / 設計 工作者的你。</p>
       </div>
       <!-- </div> -->
-    </div>
-  </div>
-</section>
-
-<div>
-  <div>
-    <a href="/jobs" class="btn btn-default btn-lg btn-block">
-
-    <p class="text-primary"><em>&gt&gt瀏覽工作<em></p></a>
-  </div>
 </div>
 
-<div class="container lightGreen pullDown">
+
+<div>
+  <div class="container light circleBehind">
+  <div>
+    <a href="/jobs", class="text-primary">&gt&gt瀏覽工作</a>
+  </div>
+  </div>
+</div>
+<!--
+<div class="container indigo topLeftBorders">
+  <a>HOME</a>
+  <a>ARTICLES</a>
+  <a>PORTFOLIO</a>
+  <a>ABOUT</a>
+  <a>CONTACT</a>
+</div> -->
+
+
+<div class="container art-img pullDown">
+  <div class="jumbotron-a">
+    <h1 class="logo">A</h1>
+
+  </div>
   <p>
   <%= link_to("藝術創作", jobs_path(:category => "藝術創作")) %>
   <%= link_to("圖文插畫", jobs_path(:category => "圖文插畫")) %>
@@ -36,7 +46,11 @@
   <%= link_to("戲劇/電影/舞台/劇場", jobs_path(:category => "戲劇/電影/舞台/劇場")) %>
 </div>
 
-<div class="container lightGreen pullDown">
+<div class="container design-img pullDown">
+  <div class="jumbotron-d">
+    <h1 class="logo">D</h1>
+
+  </div>
   <p>
   <%= link_to("時尚", jobs_path(:category => "時尚")) %>
   <%= link_to("工業/產品", jobs_path(:category => "工業/產品")) %>
