@@ -3086,19 +3086,19 @@ fieldset[disabled] a.btn {
 .btn-default:focus,
 .btn-default.focus {
   color: #000000;
-  background-color: #39444e;
+  background-color: rgba(177, 187, 154, 0.7);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-default:hover {
   color: #000000;
-  background-color: #39444e;
+  background-color: rgba(177, 187, 154, 0.7);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #000000;
-  background-color: #39444e;
+  background-color: rgba(177, 187, 154, 0.7);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-default:active:hover,
@@ -3111,7 +3111,7 @@ fieldset[disabled] a.btn {
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
   color: #000000;
-  background-color: #2a323a;
+  background-color: rgba(177, 187, 154, 0.9);
   border-color: rgba(0, 0, 0, 0);
 }
 .btn-default:active,
@@ -4898,7 +4898,7 @@ a.label:focus {
 }
 .label-default[href]:hover,
 .label-default[href]:focus {
-  background-color: #39444e;
+  background-color: rgba(177, 187, 154, 0.7);
 }
 .label-primary {
   background-color: #df691a;
@@ -5038,7 +5038,7 @@ a.badge:focus {
   color: #ffffff
 }
 .jumbotron > hr {
-  border-top-color: #39444e;
+  border-top-color: rgba(177, 187, 154, 0.7);
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
@@ -5515,7 +5515,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 21px;
-  background-color: #B1BB9A;
+  background-color: rgba(177, 187, 154, 0.5);
   border: 1px solid transparent;
   border-radius: 0;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
