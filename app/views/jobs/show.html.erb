@@ -1,27 +1,36 @@
-<div class="container-fluid job-show-page">
+<div class="container-fluid">
   <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-    <h3 class="text-center"><%= @job.title %> at <%= @job.company %></h3>
-    <hr>
-    <div class="job-content">
-      <p>
-        <span>Job Description:</sapn> <br>
-          <%= simple_format(@job.description, class: "job-description") %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @job.title %> | <%= @job.company %>
+          <% if current_user && current_user.favorite?(@job) %>
+          <%= link_to discollect_job_path(@job), method: :post do %><i class="fa fa-bookmark" aria-hidden="true"></i><% end %>
+          <% else %>
+          <%= link_to collect_job_path(@job), method: :post do %><i class="fa fa-bookmark-o" aria-hidden="true"></i><% end %>
+          <% end %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <span class="infotext">工作內容 </sapn> <br>
+            <%= simple_format(@job.description, class: "job-description") %>
+          </p>
+          <div class="divider"></div>
+        <p>
+          <span class="infotext">工作地點 </span> <%= @job.city %>
         </p>
-        <div class="divider"></div>
-      <p>
-        <span>Loaction:</span> <%= @job.city %>
-      </p>
-      <p>
-        <span>Publish Time</span>: <%= time_ago_in_words(@job.created_at) %> ago
-      </p>
-      <p>
-        <span>Contact:</span> <%= @job.contact_email %>
-      </p>
+        <p>
+          <span class="infotext">發佈時間 </span> <%= time_ago_in_words(@job.created_at) %> ago
+        </p>
+        <p>
+          <span class="infotext">連絡信箱 </span> <%= @job.contact_email %>
+        </p>
+        <div class="text-center">
+            <%= link_to("投交履歷", new_job_resume_path(@job), class: "btn btn-primary") %>
+        </div>
+
+      </div>
     </div>
-
   </div>
-</div>
-
-<div class="text-center">
-    <%= link_to("投交履歷", new_job_resume_path(@job), class: "btn btn-primary") %>
 </div>
