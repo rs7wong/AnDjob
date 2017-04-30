@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :collect, :discollect]
   before_action :validate_search_key, only: [:search]
 
   def show
@@ -87,6 +87,30 @@ class JobsController < ApplicationController
   end
   # <!--=搜索功能=-->
 
+  # --蒐藏工作--
+  def collect
+    @job = Job.find(params[:id])
+    if !current_user.favorite?(@job)
+     current_user.collect!(@job)
+     flash[:notice] = "已成功收藏此工作"
+    else
+     flash[:warning] = "已經收藏過此工作"
+    end
+    redirect_to :back
+  end
+
+  def discollect
+    @job = Job.find(params[:id])
+    if current_user.favorite?(@job)
+     current_user.discollect!(@job)
+     flash[:alert] = "已取消收藏此工作"
+    else
+     flash[:alert] = "尚未收藏此工作哦！"
+    end
+    redirect_to :back
+  end
+  # --蒐藏工作--
+
 
   private
 
@@ -109,5 +133,7 @@ class JobsController < ApplicationController
     { :title_cont => query_string }
   end
   # <!--=搜索功能=-->
+
+
 
 end
