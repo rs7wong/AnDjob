@@ -5,6 +5,12 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+
+    # 使用經緯度兩個欄位的數值，建立 Google Map
+    @hash = Gmaps4rails.build_markers(@job) do |job, marker|
+      marker.lat job.latitude
+      marker.lng job.longitude
+    end
   end
 
   def index
@@ -61,6 +67,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :city, :company, :category)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :city, :company, :category, :address, :latitude, :longitude)
   end
 end

@@ -19,6 +19,10 @@ class Job < ApplicationRecord
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order("created_at DESC") }
 
+  # converting address
+  geocoded_by :address
+  after_validation :geocode
+
 
   def publish!
     self.is_hidden = false
