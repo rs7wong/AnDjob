@@ -6,6 +6,7 @@
         <h3 class="panel-title">
           <%= @job.title %> | <%= @job.company %>
         </h3>
+
       </div>
       <div class="panel-body">
         <p>
@@ -44,6 +45,16 @@
         </p>
         <p>
           <span class="infotext">連絡信箱 </span> <%= @job.contact_email %>
+        </p>
+        <p>
+          <span class="infotext">管理選項 </span>
+          <%= link_to edit_admin_job_path(@job), class: "btn btn-xs btn-info" do %><i class="fa fa-pencil fa-fw"></i><% end %>
+          <%= link_to admin_job_path(@job), :method => :delete, :class => "btn btn-xs  btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o fa-fw"></i><% end %>
+          <% if @job.is_hidden %>
+            <%= link_to publish_admin_job_path(@job) , :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye fa-fw"></i><% end %>
+          <% else %>
+            <%= link_to hide_admin_job_path(@job), :method => :post,  :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash fa-fw"></i><% end %>
+          <% end %>
         </p>
 
 
