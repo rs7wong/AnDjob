@@ -1,3 +1,8 @@
+<div class="customed-flash" >
+  <%= render "common/flashes" %>
+</div>
+
+
 <div class="container-fluid">
   <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
     <div class="panel panel-warning">
@@ -50,7 +55,11 @@
           <span class="infotext">連絡信箱 </span> <%= @job.contact_email %>
         </p>
         <div class="text-center">
-            <%= link_to("投交履歷", new_job_resume_path(@job), class: "btn btn-primary") %>
+          <% if current_user && current_user.has_applied?(@job) %>
+	         <%= link_to("已投遞履歷", '#', class: "btn disabled") %>
+          <% else %>
+           <%= link_to("投交履歷", new_job_resume_path(@job), class: "btn btn-primary") %>
+          <% end %>
         </div>
 
       </div>

@@ -9,11 +9,12 @@
     </head>
 
     <body>
-
+      <div style="margin-top:50px;">
         <div class="container-fluid">
+          <div class="row">
             <%= render "common/navbar" %>
             <%= render "common/flashes" %>
-            <div class="row">
+
               <div class="col-md-2">
                 <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top: 20;">
                   <li class="active"><%= link_to("Jobs", admin_jobs_path) %>
@@ -27,6 +28,7 @@
         </div>
 
         <%= render "common/footer" %>
+      </div>
 
     </body>
 </html>
