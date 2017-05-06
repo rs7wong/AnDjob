@@ -3,11 +3,36 @@
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+
+     <!-- 導航縮 -->
+     <button type="button" class="navbar-toggle" data-toggle="collapse"
+             data-target=".navbar-ex1-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+     </button>
+     <!-- 導航縮 -->
+
       <a class="navbar-brand logo" href="/"><img src='<%= image_url 'logo1.png' %>' >AnDjob</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+
+
+    <div class="navbar-collapse navbar-ex1-collapse collapse"  aria-expanded="false">
+
+      <!--=搜索框=-->
+      <ul class="nav navbar-nav">
+        <li>
+          <div class="form-group form-inline search-bar">
+            <%= render :partial => "jobs/search_bar" %>
+          </div>
+        </li>
+      </ul>
+      <!--=搜索框=-->
 
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -34,17 +59,11 @@
           <% end %>
         </li>
       </ul>
-      <!--=搜索框=-->
-      <ul class="nav navbar-nav">
-        <li>
-          <div class="form-group form-inline search-bar">
-            <%= render :partial => "jobs/search_bar" %>
-          </div>
-        </li>
-      </ul>
-      <!--=搜索框=-->
+
     </div>
     <!-- /.navbar-collpase -->
-  </div>
+    </div>
+
+
   <!-- /.container-fluid -->
 </nav>

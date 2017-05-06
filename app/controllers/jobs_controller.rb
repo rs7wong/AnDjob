@@ -136,7 +136,7 @@ class JobsController < ApplicationController
   end
 
   def search_criteria(query_string)
-    { :title_cont => query_string }
+    { :title_or_name_or_category_or_company_or_city_or_address_cont => query_string }
   end
   # <!--=搜索功能=-->
 
