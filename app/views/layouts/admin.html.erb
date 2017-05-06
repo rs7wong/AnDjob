@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Job Listing </title>
-        <%= csrf_meta_tags %>
+  <head>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-      <div style="margin-top:50px;">
-        <div class="container-fluid">
-          <div class="row">
-            <%= render "common/navbar" %>
-            <%= render "common/flashes" %>
+    <title>AnDjob | 管理中心</title>
+    <%= csrf_meta_tags %>
 
-              <div class="col-md-2">
-                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top: 20;">
-                  <li class="active"><%= link_to("Jobs", admin_jobs_path) %>
-                </ul>
-              </div>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
 
-              <div class="col-md-10">
-                <%= yield %>
-              </div>
-           </div>
-        </div>
+  </head>
 
-        <%= render "common/footer" %>
+  <body>
+    <div style="margin-top:50px;">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= render "common/flashes" %>
+
+            <div class="col-md-2">
+              <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top: 20;">
+                <li class="active"><%= link_to("Jobs", admin_jobs_path) %>
+              </ul>
+            </div>
+
+            <div class="col-md-10">
+              <%= yield %>
+            </div>
+         </div>
       </div>
 
-    </body>
+      <%= render "common/footer" %>
+    </div>
+
+  </body>
 </html>
