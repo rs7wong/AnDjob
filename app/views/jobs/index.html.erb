@@ -30,8 +30,7 @@
           <td>工作類別</td>
           <td>工作名稱</td>
 
-          <td>薪資下限</td>
-          <td>薪資上限</td>
+          <td>薪資範圍</td>
           <td>刊登時間</td>
         </tr>
       </thead>
@@ -42,15 +41,15 @@
         <td><%= link_to(job.category, job_path(job)) %></td>
         <td><%= link_to(job.title, job_path(job)) %></td>
 
-        <td><%= job.wage_lower_bound %></td>
-        <td><%= job.wage_upper_bound %></td>
-        <td><%= job.created_at %>
-        </td>
+        <td><%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %></td>
+        <td><%= time_ago_in_words(job.created_at) %> ago</td>
       </tr>
       <% end %>
       </tbody>
     </table>
   </div>
+
+
   <div class="text-center">
     <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
   </div>
